@@ -1,26 +1,249 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────────────────────
+   Sugar & Skin Studio — Design System
+   Quiet luxury spa. Ivory, champagne gold, soft black, dusty rose.
+   ────────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette */
+  --ss-ivory: #f5efe6;
+  --ss-cream: #faf6f0;
+  --ss-gold: #c9a961;
+  --ss-gold-soft: #d8be84;
+  --ss-gold-deep: #a88844;
+  --ss-black: #1c1917;
+  --ss-rose: #d4a5a5;
+  --ss-rose-soft: #e6c9c9;
+  --ss-muted: #6b6460;
+  --ss-line: rgba(28, 25, 23, 0.08);
+
+  /* Semantic */
+  --background: var(--ss-cream);
+  --foreground: var(--ss-black);
+  --surface: #ffffff;
+  --surface-alt: var(--ss-ivory);
+  --accent: var(--ss-gold);
+  --on-accent: var(--ss-black);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur-med: 400ms;
+  --dur-slow: 700ms;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04), 0 1px 3px rgba(28, 25, 23, 0.06);
+  --shadow-md: 0 6px 20px -8px rgba(28, 25, 23, 0.12), 0 2px 6px rgba(28, 25, 23, 0.06);
+  --shadow-lg: 0 24px 48px -18px rgba(28, 25, 23, 0.18), 0 8px 16px -8px rgba(28, 25, 23, 0.08);
+  --shadow-gold: 0 10px 30px -12px rgba(201, 169, 97, 0.45);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: var(--ss-ivory);
+  --color-cream: var(--ss-cream);
+  --color-gold: var(--ss-gold);
+  --color-gold-soft: var(--ss-gold-soft);
+  --color-gold-deep: var(--ss-gold-deep);
+  --color-soft-black: var(--ss-black);
+  --color-rose: var(--ss-rose);
+  --color-rose-soft: var(--ss-rose-soft);
+  --color-muted: var(--ss-muted);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Typography scale — serif display for headings, inter for body */
+html {
+  font-feature-settings: "liga", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+}
+
+/* Display utilities */
+.font-display {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+.font-display-italic {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-inter), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ss-gold-deep);
+}
+
+/* Section container */
+.container-ss {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-ss {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-ss {
+    padding-inline: 3rem;
+  }
+}
+
+/* Gold hairline */
+.hairline {
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--ss-gold);
+  vertical-align: middle;
+}
+
+/* Button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: transform var(--dur-fast) var(--ease-out),
+    background var(--dur-med) var(--ease-out),
+    color var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out);
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--ss-gold);
+  color: var(--ss-black);
+  box-shadow: var(--shadow-gold);
+}
+.btn-primary:hover {
+  background: var(--ss-gold-deep);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: currentColor;
+  border-color: currentColor;
+}
+.btn-outline:hover {
+  background: var(--ss-black);
+  color: var(--ss-ivory);
+  border-color: var(--ss-black);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ss-black);
+  padding-inline: 0;
+  border: 0;
+}
+.btn-ghost::after {
+  content: "";
+  margin-left: 0.75rem;
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--dur-med) var(--ease-out);
+}
+.btn-ghost:hover::after {
+  width: 3rem;
+}
+
+/* Link underline animation */
+.link-elegant {
+  position: relative;
+  display: inline-block;
+}
+.link-elegant::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.link-elegant:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Image treatments */
+.img-warm {
+  filter: saturate(0.92) contrast(1.02);
+}
+
+/* Reveal + subtle float used by motion components */
+@keyframes ss-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: ss-float 6s var(--ease-in-out) infinite;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--ss-gold);
+  outline-offset: 3px;
+}
+
+/* Section spacing */
+.section {
+  padding-block: 5rem;
+}
+@media (min-width: 768px) {
+  .section { padding-block: 7rem; }
+}
+@media (min-width: 1280px) {
+  .section { padding-block: 9rem; }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

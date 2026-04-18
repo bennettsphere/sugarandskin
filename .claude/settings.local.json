@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx --yes create-next-app@latest . --typescript --eslint --tailwind --src-dir --app --turbopack --use-npm --import-alias \"@/*\" --yes)"
+      "Bash(npx --yes create-next-app@latest . --typescript --eslint --tailwind --src-dir --app --turbopack --use-npm --import-alias \"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Bash(npx --yes uipro init --ai claude)",
+      "Bash(npm run *)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin status --short)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin branch --show-current)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin log --oneline -n 5)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin branch -m master main)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin add -A)"
     ]
   }
 }
