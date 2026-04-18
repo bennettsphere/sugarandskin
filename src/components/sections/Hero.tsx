@@ -15,8 +15,8 @@ export function Hero() {
     >
       {/* TODO: replace with real studio photo */}
       <Image
-        src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=2400&q=80"
-        alt="Sugar & Skin Studio interior"
+        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80"
+        alt="Sugar & Skin Studio treatment room interior"
         fill
         priority
         sizes="100vw"
