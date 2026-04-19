@@ -61,24 +61,21 @@ export const serviceCategories: ServiceCategory[] = [
     blurb: "Gentle, all-natural hair removal — body & face.",
     priceRange: "$10 – $100",
     count: "19 services",
-    image:
-      "https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/stock/sugaring.jpg",
   },
   {
     slug: "facials",
     name: "Facials & Skin",
     blurb: "Custom facials tailored to your skin's needs.",
     priceRange: "$65 – $130",
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/stock/facials.jpg",
   },
   {
     slug: "peels",
     name: "Chemical Peels",
     blurb: "Targeted resurfacing for brighter, smoother skin.",
     priceRange: "$65 – $150",
-    image:
-      "https://images.unsplash.com/photo-1596178060810-72f53ce9a65c?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/stock/peels.jpg",
   },
   {
     slug: "lash-extensions",
@@ -86,24 +83,21 @@ export const serviceCategories: ServiceCategory[] = [
     blurb: "Classic, hybrid & volume — wake up ready.",
     priceRange: "$30 – $190",
     note: "$95 nonrefundable deposit for Full Set",
-    image:
-      "https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/stock/lash-extensions.jpg",
   },
   {
     slug: "lash-lift",
     name: "Lash Lift & Tint",
     blurb: "A low-maintenance lift to your natural lashes.",
     priceRange: "$25 – $80",
-    image:
-      "https://images.unsplash.com/photo-1599733589046-8a35aca84344?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/stock/lash-lift.jpg",
   },
   {
     slug: "brows",
     name: "Brow Services",
     blurb: "Shaping, tinting, waxing — beautifully framed.",
     priceRange: "$15 – $65",
-    image:
-      "https://images.unsplash.com/photo-1631730486572-226d1f595b68?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/stock/brows.jpg",
   },
   {
     slug: "procell",
@@ -111,8 +105,7 @@ export const serviceCategories: ServiceCategory[] = [
     blurb: "Our signature premium treatment for visible renewal.",
     priceRange: "$340",
     featured: true,
-    image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/stock/procell.jpg",
   },
 ];
 

@@ -15,12 +15,13 @@ export function Hero() {
     >
       {/* TODO: replace with real studio photo */}
       <Image
-        src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1920&q=80"
+        src="/images/stock/hero.jpg"
         alt="Sugar & Skin Studio treatment room interior"
         fill
         priority
         sizes="100vw"
         className="object-cover img-warm"
+        style={{ objectPosition: "30% center" }}
       />
 
       {/* Darker top/middle → ivory bottom veil for AA contrast on any image */}
@@ -90,7 +91,7 @@ export function Hero() {
 
           <motion.div
             variants={staggerItem}
-            className="mt-20 flex items-center justify-center gap-8 text-xs tracking-widest uppercase text-soft-black/75"
+            className="mt-20 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-8 text-xs tracking-widest uppercase text-soft-black/75"
           >
             <span>Appointment only</span>
             <span className="w-1 h-1 rounded-full bg-gold-deep" />

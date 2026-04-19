@@ -15,8 +15,9 @@ Defaults chosen silently while scaffolding Sugar & Skin Studio. Revisit if any f
 - CSS variables: `--font-cormorant`, `--font-inter` bound on `<html>`.
 
 ## Images
-- `next/image` with `remotePatterns` for `images.unsplash.com` (editorial placeholders only).
+- Stock images downloaded locally to `public/images/stock/` so nothing depends on external CDNs at runtime.
 - Every stock photo is marked with `{/* TODO: replace with real studio photo */}`.
+- `lash-extensions.jpg`: "fallback used" — original Unsplash URL `photo-1561618522-c4f2fb1afe3f` returned 404; substituted with Pexels `photos/3738349`.
 
 ## SEO
 - `metadataBase` set to `https://sugarandskinstudio.com` (client-owned domain — placeholder until confirmed).

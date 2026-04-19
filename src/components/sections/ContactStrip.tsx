@@ -116,9 +116,18 @@ export function ContactStrip() {
               title="Map to Sugar & Skin Studio"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full grayscale-[0.15]"
+              allowFullScreen={false}
+              className="absolute inset-0 w-full h-full grayscale-[0.15] pointer-events-none"
             />
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.addressFull)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-4 right-4 inline-flex items-center gap-2 bg-soft-black text-ivory text-[10px] tracking-[0.22em] uppercase py-2 px-4 hover:bg-gold hover:text-soft-black transition-colors"
+              aria-label="Open location in Google Maps"
+            >
+              Open in Maps
+            </a>
           </div>
           <p className="mt-4 text-xs text-soft-black/55 tracking-widest uppercase">
             {site.addressFull}

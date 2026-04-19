@@ -10,12 +10,12 @@ export function AboutPreview() {
   return (
     <section id="about" className="section bg-ivory">
       <div className="container-ss grid gap-12 md:gap-16 lg:grid-cols-2 items-center">
-        <Reveal className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden">
-            {/* TODO: replace with real studio photo */}
+        <Reveal className="relative order-2 lg:order-1">
+          <div className="relative aspect-[4/3] lg:aspect-[4/5] overflow-hidden">
+            {/* TODO: replace with real photo of Jen */}
             <Image
-              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=80"
-              alt="Esthetician at work"
+              src="/images/stock/about-jen.jpg"
+              alt="Jen Rodriguez, Licensed Esthetician at Sugar & Skin Studio"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover img-warm"
@@ -31,7 +31,7 @@ export function AboutPreview() {
           />
         </Reveal>
 
-        <Reveal delay={0.15} className="max-w-xl">
+        <Reveal delay={0.15} className="max-w-xl order-1 lg:order-2">
           <span className="eyebrow">
             <span className="hairline mr-3 align-middle" />
             Meet Jen

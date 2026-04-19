@@ -8,10 +8,35 @@ export function FloatingCTA() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const targets = ["top", "cta-final"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    const intersecting = new Set<Element>();
+
+    const compute = () => {
+      const scrolledPast = window.scrollY > 400;
+      setVisible(scrolledPast && intersecting.size === 0);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) intersecting.add(e.target);
+          else intersecting.delete(e.target);
+        }
+        compute();
+      },
+      { threshold: 0.05 },
+    );
+    targets.forEach((t) => observer.observe(t));
+
+    window.addEventListener("scroll", compute, { passive: true });
+    compute();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", compute);
+    };
   }, []);
 
   return (

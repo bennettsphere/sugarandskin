@@ -34,40 +34,70 @@ export function ServicesPreview() {
           variants={staggerContainer}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7"
         >
-          {serviceCategories.map((cat) => (
-            <motion.div key={cat.slug} variants={staggerItem}>
+          {serviceCategories
+            .filter((cat) => !cat.featured)
+            .map((cat) => (
+              <motion.div key={cat.slug} variants={staggerItem}>
+                <Link
+                  href={`/services#${cat.slug}`}
+                  className="group relative block aspect-[4/5] min-h-[280px] overflow-hidden bg-ivory"
+                >
+                  {/* TODO: replace with real studio photo */}
+                  <Image
+                    src={cat.image}
+                    alt={cat.name}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover img-warm transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-soft-black/85 via-soft-black/25 to-transparent"
+                    aria-hidden
+                  />
+
+                  <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end text-ivory">
+                    <p className="eyebrow text-gold-soft">{cat.priceRange}</p>
+                    <h3 className="font-display text-2xl md:text-3xl mt-2">
+                      {cat.name}
+                    </h3>
+                    <p className="mt-2 text-sm text-ivory/80 max-w-xs">
+                      {cat.blurb}
+                    </p>
+                    <div className="mt-5 inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-ivory/90 group-hover:text-gold transition-colors">
+                      Learn more
+                      <ArrowUpRight
+                        size={14}
+                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+        </motion.div>
+
+        {serviceCategories
+          .filter((cat) => cat.featured)
+          .map((cat) => (
+            <Reveal key={cat.slug} delay={0.1} className="mt-5 md:mt-7">
               <Link
                 href={`/services#${cat.slug}`}
-                className="group relative block aspect-[4/5] overflow-hidden bg-ivory"
+                className="group relative grid grid-cols-1 md:grid-cols-2 overflow-hidden bg-soft-black text-ivory min-h-[320px]"
               >
-                {/* TODO: replace with real studio photo */}
-                <Image
-                  src={cat.image}
-                  alt={cat.name}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover img-warm transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-soft-black/85 via-soft-black/25 to-transparent"
-                  aria-hidden
-                />
-
-                {cat.featured && (
-                  <span className="absolute top-5 left-5 inline-flex items-center gap-1 bg-gold text-soft-black text-[10px] tracking-[0.22em] uppercase py-1.5 px-3">
+                <div className="relative p-8 md:p-12 lg:p-16 flex flex-col justify-center order-2 md:order-1">
+                  <span className="inline-flex items-center gap-1.5 self-start bg-gold text-soft-black text-[10px] tracking-[0.22em] uppercase py-1.5 px-3">
                     <Sparkles size={10} /> Premium
                   </span>
-                )}
-
-                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end text-ivory">
-                  <p className="eyebrow text-gold-soft">{cat.priceRange}</p>
-                  <h3 className="font-display text-2xl md:text-3xl mt-2">
+                  <p className="eyebrow text-gold-soft mt-6">
+                    {cat.priceRange}
+                  </p>
+                  <h3 className="font-display text-3xl md:text-4xl lg:text-5xl mt-3 text-ivory">
                     {cat.name}
                   </h3>
-                  <p className="mt-2 text-sm text-ivory/80 max-w-xs">
+                  <p className="mt-4 text-ivory/75 max-w-md leading-relaxed">
                     {cat.blurb}
                   </p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-ivory/90 group-hover:text-gold transition-colors">
+                  <div className="mt-8 inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-gold group-hover:text-ivory transition-colors">
                     Learn more
                     <ArrowUpRight
                       size={14}
@@ -75,10 +105,23 @@ export function ServicesPreview() {
                     />
                   </div>
                 </div>
+                <div className="relative order-1 md:order-2 aspect-[16/10] md:aspect-auto md:min-h-full">
+                  {/* TODO: replace with real studio photo */}
+                  <Image
+                    src={cat.image}
+                    alt={cat.name}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover img-warm transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-soft-black/40 via-transparent to-transparent md:from-soft-black/60"
+                    aria-hidden
+                  />
+                </div>
               </Link>
-            </motion.div>
+            </Reveal>
           ))}
-        </motion.div>
 
         <Reveal delay={0.1} className="text-center mt-14">
           <Link

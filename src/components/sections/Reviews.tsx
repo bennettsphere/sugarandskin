@@ -37,37 +37,19 @@ export function Reviews() {
           </p>
         </Reveal>
 
-        {/* Mobile: horizontal snap carousel. Desktop: 3-col grid */}
-        <motion.ul
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={staggerContainer}
-          className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-5 pb-4 -mx-5 px-5"
-        >
-          {reviews.map((r) => (
-            <motion.li
-              key={r.name}
-              variants={staggerItem}
-              className="min-w-[85%] snap-start bg-surface border border-[var(--ss-line)] p-7"
-            >
-              <ReviewCard review={r} />
-            </motion.li>
-          ))}
-        </motion.ul>
-
+        {/* Mobile: 1-col vertical stack. Desktop: 2-/3-col grid */}
         <motion.ul
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           variants={staggerContainer}
-          className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
         >
           {reviews.map((r) => (
             <motion.li
               key={r.name}
               variants={staggerItem}
-              className="bg-surface border border-[var(--ss-line)] p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-md)]"
+              className="bg-surface border border-[var(--ss-line)] p-7 md:p-8 transition-all duration-500 md:hover:-translate-y-1 md:hover:shadow-[var(--shadow-md)]"
             >
               <ReviewCard review={r} />
             </motion.li>
