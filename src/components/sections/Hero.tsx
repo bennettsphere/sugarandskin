@@ -15,7 +15,7 @@ export function Hero() {
     >
       {/* TODO: replace with real studio photo */}
       <Image
-        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80"
+        src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1920&q=80"
         alt="Sugar & Skin Studio treatment room interior"
         fill
         priority
@@ -23,13 +23,13 @@ export function Hero() {
         className="object-cover img-warm"
       />
 
-      {/* Layered cream/ivory wash for that soft editorial feel */}
+      {/* Darker top/middle → ivory bottom veil for AA contrast on any image */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-cream/80 via-cream/50 to-ivory/85"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(245,239,230,0.15)_0%,_rgba(245,239,230,0.6)_70%)]"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(28,25,23,0.55) 0%, rgba(28,25,23,0.35) 50%, rgba(245,239,230,0.75) 100%)",
+        }}
         aria-hidden
       />
 
@@ -41,28 +41,28 @@ export function Hero() {
           className="max-w-3xl mx-auto text-center"
         >
           <motion.div variants={staggerItem} className="mb-8">
-            <span className="eyebrow">
-              <span className="hairline mr-3 align-middle" />
+            <span className="eyebrow !text-gold-soft">
+              <span className="hairline mr-3 align-middle !bg-gold-soft" />
               Lake Havasu City · Arizona
-              <span className="hairline ml-3 align-middle" />
+              <span className="hairline ml-3 align-middle !bg-gold-soft" />
             </span>
           </motion.div>
 
           <motion.h1
             variants={staggerItem}
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-soft-black"
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-ivory drop-shadow-[0_1px_12px_rgba(0,0,0,0.25)]"
           >
-            <span className="font-display-italic text-gold-deep">Sugar</span>
+            <span className="font-display-italic text-gold">Sugar</span>
             <span className="mx-2 text-gold">&</span>
-            <span className="font-display-italic text-gold-deep">Skin</span>
-            <span className="block mt-2 text-2xl md:text-3xl tracking-[0.32em] uppercase font-sans font-light text-soft-black/70">
+            <span className="font-display-italic text-gold">Skin</span>
+            <span className="block mt-2 text-2xl md:text-3xl tracking-[0.32em] uppercase font-sans font-light text-ivory/85">
               Studio
             </span>
           </motion.h1>
 
           <motion.p
             variants={staggerItem}
-            className="mt-10 text-lg md:text-xl text-soft-black/75 font-light max-w-xl mx-auto leading-relaxed"
+            className="mt-10 text-lg md:text-xl text-ivory/95 font-light max-w-xl mx-auto leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.25)]"
           >
             {site.tagline}.
           </motion.p>
@@ -82,7 +82,7 @@ export function Hero() {
             </a>
             <Link
               href="/#contact"
-              className="text-sm tracking-[0.18em] uppercase text-soft-black/80 link-elegant"
+              className="text-sm tracking-[0.18em] uppercase text-ivory/95 link-elegant drop-shadow-[0_1px_6px_rgba(0,0,0,0.3)]"
             >
               Free 15-min consult
             </Link>
@@ -90,18 +90,18 @@ export function Hero() {
 
           <motion.div
             variants={staggerItem}
-            className="mt-20 flex items-center justify-center gap-8 text-xs tracking-widest uppercase text-soft-black/55"
+            className="mt-20 flex items-center justify-center gap-8 text-xs tracking-widest uppercase text-soft-black/75"
           >
             <span>Appointment only</span>
-            <span className="w-1 h-1 rounded-full bg-gold" />
+            <span className="w-1 h-1 rounded-full bg-gold-deep" />
             <span>Clean products</span>
-            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-gold" />
+            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-gold-deep" />
             <span className="hidden sm:inline-block">Est. Lake Havasu</span>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Bottom gradient meet */}
+      {/* Bottom gradient meet into cream body */}
       <div
         className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-cream"
         aria-hidden

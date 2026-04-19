@@ -9,7 +9,19 @@
       "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin branch --show-current)",
       "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin log --oneline -n 5)",
       "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin branch -m master main)",
-      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin add -A)"
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin add -A)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin commit -m ' *)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(npm ls *)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel link *)",
+      "Bash(vercel teams *)",
+      "Bash(vercel deploy *)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin add src/components/sections/Hero.tsx)",
+      "Bash(git -C /c/Users/amala/websitebuilds/sugarandskin push origin main)",
+      "Bash(node scripts/grab-hero-candidates.mjs)",
+      "Bash(node scripts/preview-candidates.mjs)"
     ]
   }
 }
