@@ -17,7 +17,12 @@ Defaults chosen silently while scaffolding Sugar & Skin Studio. Revisit if any f
 ## Images
 - Stock images downloaded locally to `public/images/stock/` so nothing depends on external CDNs at runtime.
 - Every stock photo is marked with `{/* TODO: replace with real studio photo */}`.
-- `lash-extensions.jpg`: "fallback used" — original Unsplash URL `photo-1561618522-c4f2fb1afe3f` returned 404; substituted with Pexels `photos/3738349`.
+- Replacement pass (category-appropriate, no generic spa fallback):
+  - `sugaring.jpg` — candidate 1 (Unsplash `photo-1540555700478`)
+  - `lash-extensions.jpg` — candidate 2 (Unsplash `photo-1583241800698`); candidate 1 (`photo-1588387036370`) returned 404
+  - `lash-lift.jpg` — candidate 2 (Unsplash `photo-1596704017254`); candidate 1 (`photo-1616065554720`) returned 404
+  - `brows.jpg` — candidate 1 (Unsplash `photo-1616683693504`)
+  - `about-jen.jpg` — candidate 1 (Unsplash `photo-1522337660859`)
 
 ## SEO
 - `metadataBase` set to `https://sugarandskinstudio.com` (client-owned domain — placeholder until confirmed).
