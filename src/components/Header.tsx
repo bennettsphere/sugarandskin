@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { site } from "@/lib/site";
 
 const nav = [
-  { href: "/#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/#about", label: "About" },
   { href: "/#reviews", label: "Reviews" },
   { href: "/#contact", label: "Contact" },
