@@ -150,8 +150,8 @@ export default function ServicesPage() {
         <div className="container-ss">
           <Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden bg-soft-black text-ivory min-h-[420px]">
-              {/* Image — left at md+, top on mobile */}
-              <div className="relative aspect-[16/10] md:aspect-auto md:min-h-full">
+              {/* Image — left at md+, top on mobile (capped to 280px on mobile so it doesn't dominate) */}
+              <div className="relative h-[280px] md:h-auto md:min-h-full">
                 {/* TODO: replace with real studio photo */}
                 <Image
                   src={procellCategory.image}
